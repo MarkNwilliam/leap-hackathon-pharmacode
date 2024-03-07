@@ -1,0 +1,6 @@
+{
+    "require": {
+        "timkley/weaviate-php": "^0.6.2"
+    },
+    "minimum-stability": "dev"
+}
