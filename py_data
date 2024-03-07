@@ -1,0 +1,36 @@
+import mysql.connector
+
+# Database connection configuration
+config = {
+    'host': 'localhost',
+    'user': 'test',
+    'password': 'Nkugwamarkwilliam@123',
+    'database': 'test',
+}
+
+# Connect to the database
+try:
+    conn = mysql.connector.connect(**config)
+    print('Connected to database')
+except mysql.connector.Error as e:
+    print(f'Error connecting to database: {e}')
+    exit()
+
+# Create a cursor object to execute queries
+cursor = conn.cursor()
+
+# Example query
+query = 'SELECT * FROM test'
+try:
+    cursor.execute(query)
+    results = cursor.fetchall()
+    print('Query results:')
+    for row in results:
+        print(row)
+except mysql.connector.Error as e:
+    print(f'Error executing query: {e}')
+
+# Close cursor and connection
+cursor.close()
+conn.close()
+
